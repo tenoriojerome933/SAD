@@ -1,0 +1,34 @@
+<div class="login-container">
+  <div class="login-form">
+    <h2 class="form-title">Login</h2>
+
+    <form [formGroup]="loginForm" (submit)="loginFunc()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          name="name"
+          class="form-input"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          name="password"
+          class="form-input"
+        />
+      </div>
+<!-- <a [routerLink]="['/page/home']"> -->
+      <button type="submit" class="submit-button">
+        Login
+      </button>
+<!-- </a> -->
+    </form>
+  </div>
+</div>

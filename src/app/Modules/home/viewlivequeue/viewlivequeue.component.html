@@ -1,0 +1,55 @@
+<div class="queue-container">
+    <!-- <h2 class="queue-title">{{ currentDate | date: 'longDate' }}</h2> -->
+    
+        <div class="queue-main">
+    
+        <!-- Left Side -->
+        @if (queueData?.token) {
+            <div class="current-token-box">
+            <div class="current-token-header">NOW SERVING</div>
+    
+            <div class="current-token-number">
+                <span class="token-label">TOKEN NUMBER</span>
+    
+                <div class="token-value">
+                {{ queueData.token }}
+                </div>
+    
+                <div class="token-details">
+                <h3>{{ queueData.last_name }}, {{ queueData.first_name }} {{ queueData.middle_name }}.</h3>
+                <div>{{ queueData.course }}</div>
+                <div>{{ queueData.email }}</div>
+                <div>{{ queueData.purpose }}</div>
+                </div>
+            </div>
+            <button class="call-next-btn" type="button" (click)="callNext()" [disabled]="isCallingNext">Call Next Token</button>
+            </div>
+        }
+    
+        <!-- Right Side (Waiting List) -->
+        @if (waitingData) {
+            <div class="waiting-list-box">
+            <h3 class="waiting-title">Individuals Waiting in Queue</h3>
+    
+            <table class="queue-table">
+                <thead>
+                <tr>
+                    <th>Token</th>
+                    <th>Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                    @for(que of waitingData; track que.queue_id){
+                <tr>
+                    <td>{{ que.token }}</td>
+                    <td>{{ que.last_name }}, {{ que.first_name }} {{ que.middle_name }}.</td>
+                </tr>
+            }
+                </tbody>
+            </table>
+            </div>
+        }
+    
+        </div>
+    </div>
+    

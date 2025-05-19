@@ -1,0 +1,74 @@
+.waiting-list-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  .waiting-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #387370; /* Same as navbar color */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .queue-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .queue-table thead {
+    background-color: #387370; /* Matching navbar color */
+    color: white;
+    text-align: left;
+  }
+  
+  .queue-table th, .queue-table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #dfe6e9;
+  }
+  
+  .queue-table tbody tr {
+    background-color: #f9f9f9;
+    transition: background 0.3s;
+  }
+  
+  .queue-table tbody tr:hover {
+    background-color: #eaf7ff;
+  }
+  
+  .queue-table tbody td {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .queue-table tbody td:first-child {
+    font-weight: bold;
+    color: #387370; /* Same as navbar color */
+  }
+  
+  .queue-table tbody td:last-child {
+    color: #555;
+  }
+
+  .icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 5px;
+  }
+
+  .icon-btn i {
+      transition: transform 0.3s;
+  }
+
+  .icon-btn:hover i {
+      transform: scale(1.2);
+  }

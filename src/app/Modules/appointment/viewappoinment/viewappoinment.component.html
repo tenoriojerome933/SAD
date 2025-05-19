@@ -1,0 +1,38 @@
+@if (appointmentData) {
+    <div class="waiting-list-box">
+    <h3 class="waiting-title">Individuals Appoinments</h3>
+    <table class="queue-table">
+        <thead>
+        <tr>
+            <th>Token</th>
+            <th>Name</th>
+            <th>Purpose</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @for(app of appointmentData; track app.queue_id){
+        <tr>
+            <td>{{app.token}}</td>
+            <td>{{app.last_name }} {{ app.first_name }} {{ app.middle_name }}.</td>
+            <td>{{app.purpose}}</td>
+            <td>{{app.day}}</td>
+            <td>{{app.time_beginning}}-{{app.time_end}}</td>
+            <td>
+                <button class="icon-btn" title="Accept request" (click)="handleCheck(app.request_id)">
+                <i class="fas fa-check-square" style="color: green;" aria-hidden="true"></i>
+                <!-- <span class="visually-hidden">Accept request</span> -->
+                </button>
+                <button class="icon-btn" title="Reject request" (click)="handleReject(app.request_id)">
+                <i class="fas fa-times-circle" style="color: red;" aria-hidden="true"></i>
+                <!-- <span class="visually-hidden">Reject request</span> -->
+                </button>
+            </td>
+        </tr>
+        }
+        </tbody>
+    </table>
+    </div>
+}

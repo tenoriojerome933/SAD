@@ -1,6 +1,9 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+// app.config.ts
+import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideHttpClient(withFetch()) // ✅ This enables fetch-based HttpClient
+  ]
+};

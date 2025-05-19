@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <div class="navbar-container">
+      <a routerLink="/page/home" class="navbar-brand">DQMS</a>
+      <ul class="navbar-links">
+        <li>
+          <a routerLink="/page/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="navbar-link">Home</a>
+        </li>
+        <li>
+          <a routerLink="/page/appointment" routerLinkActive="active" class="navbar-link">Appointment</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  
